@@ -16,5 +16,15 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        private void frmMainClient_Load(object sender, EventArgs e)
+        {
+            DialogResult loginDialogResult;
+            frmLogin frmlogin = new frmLogin();
+            frmlogin.ShowDialog();
+            loginDialogResult = frmlogin.DialogResult;
+            if (loginDialogResult != System.Windows.Forms.DialogResult.OK)
+                this.Close();
+        }
     }
 }
