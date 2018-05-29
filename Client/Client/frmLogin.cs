@@ -48,7 +48,7 @@ namespace Client
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (chkPort() || chkUserName() || chkServerName())
+            if (chkPort() && chkUserName() && chkServerName())
             {
                 MessageBox.Show("dien du thong tin vao ii");
                 return;
