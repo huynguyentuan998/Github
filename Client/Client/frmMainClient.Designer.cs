@@ -28,40 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.contentList = new System.Windows.Forms.ListBox();
             this.labelUserName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelPort = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.buttonGroupChat = new System.Windows.Forms.Button();
             this.buttonPrivateChat = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.messageBox = new System.Windows.Forms.TextBox();
+            this.btSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // contentList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(33, 81);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(507, 329);
-            this.listBox1.TabIndex = 0;
+            this.contentList.FormattingEnabled = true;
+            this.contentList.ItemHeight = 17;
+            this.contentList.Location = new System.Drawing.Point(33, 81);
+            this.contentList.Name = "contentList";
+            this.contentList.Size = new System.Drawing.Size(507, 293);
+            this.contentList.TabIndex = 0;
             // 
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
-            this.labelUserName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserName.Location = new System.Drawing.Point(28, 22);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(118, 29);
+            this.labelUserName.Size = new System.Drawing.Size(100, 24);
             this.labelUserName.TabIndex = 1;
             this.labelUserName.Text = "User name";
             // 
             // labelPort
             // 
             this.labelPort.AutoSize = true;
-            this.labelPort.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPort.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPort.Location = new System.Drawing.Point(576, 22);
             this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(54, 29);
+            this.labelPort.Size = new System.Drawing.Size(45, 24);
             this.labelPort.TabIndex = 2;
             this.labelPort.Text = "Port";
             // 
@@ -92,17 +94,37 @@
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // messageBox
+            // 
+            this.messageBox.Location = new System.Drawing.Point(115, 380);
+            this.messageBox.Multiline = true;
+            this.messageBox.Name = "messageBox";
+            this.messageBox.Size = new System.Drawing.Size(425, 44);
+            this.messageBox.TabIndex = 6;
+            this.messageBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageBox_KeyDown);
+            // 
+            // btSend
+            // 
+            this.btSend.Location = new System.Drawing.Point(580, 380);
+            this.btSend.Name = "btSend";
+            this.btSend.Size = new System.Drawing.Size(75, 44);
+            this.btSend.TabIndex = 7;
+            this.btSend.Text = "Send";
+            this.btSend.UseVisualStyleBackColor = true;
+            // 
             // frmMainClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 473);
+            this.Controls.Add(this.btSend);
+            this.Controls.Add(this.messageBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonPrivateChat);
             this.Controls.Add(this.buttonGroupChat);
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.labelUserName);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.contentList);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMainClient";
@@ -116,12 +138,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox contentList;
         private Bunifu.Framework.UI.BunifuCustomLabel labelUserName;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPort;
         private System.Windows.Forms.Button buttonGroupChat;
         private System.Windows.Forms.Button buttonPrivateChat;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox messageBox;
+        private System.Windows.Forms.Button btSend;
     }
 }
 

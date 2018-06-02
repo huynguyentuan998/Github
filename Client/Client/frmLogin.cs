@@ -18,11 +18,11 @@ namespace Client
         }
 
         private string strUserName;
-        private string strServerName;
+        private string strServerAddress;
         private string strPort;
   
         public string userName { get => strUserName;}
-        public string serverName { get => strServerName;}
+        public string serverAddress { get => strServerAddress;}
         public string port { get => strPort;}
 
         private bool chkUserName()
@@ -32,7 +32,7 @@ namespace Client
             return true;
         }
 
-        private bool chkServerName()
+        private bool chkServerAddress()
         {
             if (textBoxServerName.Text == "")
                 return false;
@@ -48,13 +48,13 @@ namespace Client
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (chkPort() && chkUserName() && chkServerName())
+            if (!chkUserName())
             {
                 MessageBox.Show("dien du thong tin vao ii");
                 return;
             }
             strUserName = textBoxUserName.Text;
-            strServerName = textBoxServerName.Text;
+            strServerAddress = textBoxServerName.Text;
             strPort = textBoxPort.Text;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

@@ -16,7 +16,14 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainClient());
+            try
+            {
+                Application.Run(new frmMainClient());
+            }
+            catch (Exception ei)
+            {
+                MessageBox.Show(ei.ToString());
+            }
         }
     }
 }
